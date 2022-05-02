@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken")
 const authorModel = require("../models/authorModel")
 const blogModel = require("../models/blogModel")
-
+const BlogModel= require("../models/blogModel")
 const moment = require('moment')
 
 let time = moment().format('YYYY-MM-DDTHH:MM:ss.SSS')
