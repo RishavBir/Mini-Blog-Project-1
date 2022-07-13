@@ -1,5 +1,6 @@
 
 const AuthorModel = require("../models/authorModel")
+
 function validateEmail(usermail) {
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailPattern.test(usermail);
@@ -27,11 +28,7 @@ const createAuthor = async function (req, res) {
     catch (error) {
 
         res.status(400).send({status: false, msg: error.message })
-
-
-
     }
-
 
 }
 

@@ -20,12 +20,13 @@ const createBlog = async function (req, res) {
         res.status(201).send({ status: true, data: savedData })
     }
 
-
     catch (error) {
         res.status(400).send({ status: false, msg: error.message })
     }
 
 }
+
+ //*********************************************************************************************************** */
 
 
 const updateBlogs = async function (req, res) {
@@ -60,6 +61,8 @@ const updateBlogs = async function (req, res) {
     }
 }
 
+//************************************************************************************************************* */
+
 const deleteBlogs = async function (req, res) {
     try {
         let id = req.params.blogId
@@ -72,6 +75,7 @@ const deleteBlogs = async function (req, res) {
     }
 }
 
+//**************************************************************************************************************************************************************************** */
 
 const deleteBlogsByFields = async function (req, res) {
     try {
@@ -88,7 +92,7 @@ const deleteBlogsByFields = async function (req, res) {
     }
 }
 
-
+//***************************************************************************************************************************************************** */
 
 const getBlog = async function (req, res) {
     try {
@@ -110,9 +114,9 @@ const getBlog = async function (req, res) {
         res.status(400).send({ status: false, msg: error.message })
     }
 
-
 }
 
+//*************************************************************************************************************** */
 
 const loginAuthor = async function (req, res) {
     try {
@@ -124,7 +128,7 @@ const loginAuthor = async function (req, res) {
         if (!valid) {
             return res.status(404).send({ status: false, msg: "email or password is wrong" })
         }
-        let token = jwt.sign({
+        let token = jwt.sign({                     // On successfull login, JWT will create.
             authorId: valid._id.toString(),
             group: 25,
             batch: "uranium"
