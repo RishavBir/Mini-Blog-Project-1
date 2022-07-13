@@ -130,8 +130,8 @@ const loginAuthor = async function (req, res) {
         }
         let token = jwt.sign({                     // On successfull login, JWT will create.
             authorId: valid._id.toString(),
-            group: 25,
-            batch: "uranium"
+            group: 25,                 // Group-25 is the secret key
+            batch: "uranium"           // ( Group-25 and batch:Uranium )...this are two key value pair in payload.
         }, "group-25")
         res.setHeader("x-api-key", token)
         res.status(200).send({ status: true, data: token })
