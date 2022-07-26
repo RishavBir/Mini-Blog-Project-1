@@ -13,7 +13,7 @@ const authEntication = async function (req, res, next) {
         next()
     }
     catch (error) {
-        return res.status(407).send({status:false, msg: error.message })
+        return res.status(407).send({ status: false, msg: error.message })
     }
 
 }
@@ -38,13 +38,13 @@ const authorIsation = async function (req, res, next) {
         }
         let _id = authorId.authorId.toString()
         let logId = decodedToken.authorId;
-        if (_id != logId) return res.status(401).send({status: false, msg: "Sorry,authorisation required  " });
+        if (_id != logId) return res.status(401).send({ status: false, msg: "Sorry,authorisation required  " });
         next()
 
     }
 
     catch (error) {
-        return res.status(404).send({status : false, msg : error.message })
+        return res.status(404).send({ status: false, msg: error.message })
     }
 
 }

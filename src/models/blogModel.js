@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
-const blogSchema = new mongoose.Schema({
 
+const blogSchema = new mongoose.Schema({
 
     title: {
         type: String,
@@ -28,16 +28,20 @@ const blogSchema = new mongoose.Schema({
 
     subcategory: [String],
 
-    isPublished: Boolean,
+    isPublished: {
+        type: Boolean
+    },
 
-    publishedAt: String,
+    publishedAt: {
+        type: String
+    },
 
     isDeleted: {
         type: Boolean,
         default: false
     },
 
-    deletedAt: {type : String, default : ""},
+    deletedAt: { type: String, default: "" },
 
 
 },
